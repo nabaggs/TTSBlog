@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  <div class="container">
+    <div class="pull-right">
+      <% if user_signed_in?%>
+        <%=link_to "Log Out",destroy_user_session_path,method: :delete,class: "btn btn-danger"%>
+      <%else%>
+          <%= link_to "Sign In", new_user_session_path,class: "btn btn-info"%>
+          <%=link_to "Sign Up",new_user_registration_path,class: "btn btn-primary"%>
+      <%end%>
+    </div>
+  </div>
     <%= yield %>
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

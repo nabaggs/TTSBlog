@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :comments,only: [:edit,:create,:update,:destroy]
   resources :blog_posts
   root "blog_posts#index"
